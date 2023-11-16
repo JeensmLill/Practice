@@ -1,0 +1,53 @@
+@import 'antd/dist/antd.css';
+
+.btn-primary-warning {
+    background-color: #FF9900;
+    border-color: #FF9900;
+    color: white;
+    &:active {
+        background-color: #c77700;
+        border-color: #c77700;
+    }
+    &:hover {
+        background-color: #ffb342;
+        border-color: #ffb342;
+        color: white;
+    }
+    &:focus {
+        background-color: #ff9e0d;
+        border-color: #ff9e0d;
+        color: white;
+    }
+}
+.btn-dashed-warning {
+    border-color: #FF9900;
+    color: #FF9900;
+    &:active {
+        background-color: #c77700;
+        border-color: #c77700;
+    }
+    &:hover {
+        border-color: #ffb342;
+        color: #ffb342;
+    }
+    &:focus {
+        border-color: #ff9e0d;
+        color: #ff9e0d;
+    }
+}
+
+.ant-btn {
+    margin: 0 6px 6px 0;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    position: absolute;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #1890ff;
+}
+::-webkit-scrollbar-track {
+    background-color: #ddd;
+}

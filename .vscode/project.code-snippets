@@ -1,0 +1,156 @@
+{
+	// Place your news-publish workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"default scope": {
+		"scope": "javascript,typescript,javascriptreact,typescriptreact",
+		"prefix": "",
+		"body": [],
+		"description": ""
+	},
+
+	"React State": {
+		"prefix": "react-state",
+		"body": [
+			"const [state_$1, setState_$1] = useState();",
+		],
+	},
+	"ReactRouter route": {
+		"prefix": "reactRouter-route",
+		"body": [
+			"import { RouteObject } from \"react-router-dom\";",
+			"",
+			"const Component = () => {",
+				"return (",
+					"<div>$1</div>",
+				")",
+			"};",
+			"",
+			"const route: RouteObject = {",
+				"path: \"$1\",",
+				"Component",
+			"};",
+			"export default route;",
+		],
+	},
+	"ReactRouter route loader": {
+		"prefix": "reactRouter-route-loader",
+		"body": [
+			"const loader = async ({request}: LoaderFunctionArgs) => {",
+				"const data = {};",
+
+				"return data;",
+			"};",
+		],
+	},
+	"ReactRouter route action": {
+		"prefix": "reactRouter-route-action",
+		"body": [
+			"const action = async ({request}: ActionFunctionArgs) => {",
+				"return null;",
+			"};",
+		],
+	},
+	"ReactRouter route object": {
+		"prefix": "reactRouter-route-object",
+		"body": [
+			"{",
+				"path: '/route',",
+				"loader: route.loader,",
+				"action: route.action,",
+				"element: <route.Component/>,",
+			"}",
+		],
+	},
+	"Redux Toolkit reducer": {
+		"prefix": "ReduxToolkit-reducer",
+		"body": [
+			"import { createSlice } from \"@reduxjs/toolkit\";",
+			"",
+			"const initialState = {};",
+			"const slice = createSlice({",
+				"name: \"$1\",",
+				"initialState,",
+				"reducers: {}",
+			"});",
+			"",
+			"export default slice.reducer;",
+			"export const sliceActions_$1 = slice.actions;",
+		],
+	},
+	"declare type api": {
+		"prefix": "declare-type-api",
+		"body": [
+			"export type Form_$1 = {};",
+			"export type Data_$1 = {};",
+			"export type Response_$1 = APIResponse<Data_$1>;",
+			"export type Request_$1 = APIRequest<Response_$1, Form_$1>;",
+		],
+	},
+	"declare type component": {
+		"prefix": "declare-type-component",
+		"body": [
+			"export interface Prop_$1 {",
+			"}",
+			"export interface $1Type {",
+			"	(prop: Prop_$1): React.ReactNode;",
+			"}",
+		],
+	},
+	"declare type Return_Loader": {
+		"prefix": "declare-type-Return_Loader",
+		"body": [
+			"type Return_Loader = Awaited<ReturnType<typeof loader>>;",
+		],
+	},
+	"declare type table Record": {
+		"prefix": "declare-type-table-Record",
+		"body": [
+			"type Record = (typeof $1)[number];",
+		],
+	},
+	"declare type function": {
+		"prefix": "declare-type-function",
+		"body": [
+			"export interface Param_$1 {",
+			"}",
+			"export type Return_$1 = {};",
+			"export interface Function_$1 {",
+			"	(param: Param_$1): Return_$1;",
+			"}",
+		],
+	},
+	"rsl.code === 200": {
+		"prefix": "rsl.code === 200",
+		"body": [
+			"if(rsl.code === 200) {",
+				"$1",
+			"} else {",
+				"console.log(rsl);",
+				"message.error(rsl.msg);",
+			"}",
+		],
+	},
+	"rsl.code !== 200": {
+		"prefix": "rsl.code !== 200",
+		"body": [
+			"if(rsl.code !== 200) {",
+				"console.log(rsl);",
+				"throw new Response(\"Not Found\", {status: 404});",
+			"}",
+		],
+	},
+}
